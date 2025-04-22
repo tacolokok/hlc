@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "tacolokok/hlc-app"
+        IMAGE_NAME = "tacolokok/hlc"
         KUBE_CONFIG = "/var/jenkins_home/.kube/config"
     }
 
