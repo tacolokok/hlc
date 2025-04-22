@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hlc-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hlc
+  template:
+    metadata:
+      labels:
+        app: hlc
+    spec:
+      containers:
+        - name: hlc
+          image: txus27/hlc-app:latest
+          ports:
+            - containerPort: 80
