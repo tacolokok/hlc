@@ -7,18 +7,12 @@ pipeline {
     }
 
     stages {
-        stage('Clonar repo') {
+
+        stage('Build imagen Docker') {
             steps {
-                git branch: 'main', url: 'https://github.com/tacolokok/hlc.git'
+                sh "docker build -t ${IMAGE_NAME}:latest ."
             }
         }
-
-stage('Build imagen Docker') {
-    steps {
-        sh "docker build -t ${IMAGE_NAME}:latest ."
-    }
-}
-
 
         stage('Push a DockerHub') {
             steps {
