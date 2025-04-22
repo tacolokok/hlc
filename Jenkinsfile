@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clonar repo') {
             steps {
-                git 'https://github.com/tacolokok/hlc.git'
+                git branch: 'main', url: 'https://github.com/tacolokok/hlc.git'
             }
         }
 
