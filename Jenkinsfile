@@ -13,13 +13,12 @@ pipeline {
             }
         }
 
-        stage('Construir imagen Docker') {
-            steps {
-                script {
-                    docker.build("${IMAGE_NAME}:latest", ".")
-                }
-            }
-        }
+stage('Build imagen Docker') {
+    steps {
+        sh "docker build -t ${IMAGE_NAME}:latest ."
+    }
+}
+
 
         stage('Push a DockerHub') {
             steps {
